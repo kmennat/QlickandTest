@@ -1,0 +1,103 @@
+.backgrnd-image {
+  background-image: url("./../../../assets/hacker-code-running-down-computer-screen-terminal-3d-rendering_94607-1157.avif");
+  margin-top: 62px;
+
+}
+
+.top-text{
+  font-size: 13px;
+}
+
+.zigzag {
+  background-image: url("./../../../assets/Icons-11.png");
+  background-size: 1396px;
+}
+
+.main-button {
+  border-radius: 17px;
+  padding: 6px 23px 13px 24px;
+}
+
+.card-circle-radius {
+  border-radius: 35px;
+}
+
+.basic-font {
+  font-family: verdana, sans-serif;
+}
+
+.basic-heading {
+  color: #243464;
+}
+
+.laptop {
+  margin-left: 119px;
+}
+
+
+//  phone view
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+  .footer-logo {
+    width: 200px !important;
+    margin-left: 59px;
+  }
+
+  .zigzag {
+    background-image: none;
+  }
+
+  .laptop {
+    display: none !important;
+  }
+
+  .laptopmobile {
+    margin: -60px 0px 1px 0px;
+  }
+
+  .basic-margin {
+    margin-left: 0px !important;
+  }
+  .laptoptabview{
+    display: none;
+  }
+  .basic-font{
+    padding: 12px !important;
+  }
+
+}
+
+// tablet view
+@media only screen and (max-width: 1024px) and (min-width: 605px) {
+  .laptoptabview {
+    margin-left: 119px;
+    margin-left: 0px;
+    height: 560px;;
+    width: auto;
+
+;
+  
+  }
+  .laptop {
+    display: none !important;
+  }
+
+  .laptopmobile {
+    display: none !important;
+  }
+}
+
+.services-para{
+  font-size: 15px;
+}
+
+
+// laptop view
+@media only screen and (max-width: 2696px) and (min-width: 1025px) {
+  .laptopmobile {
+    display: none;
+  }
+  .laptoptabview{
+    display: none;
+  }
+}
+

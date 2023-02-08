@@ -1,0 +1,16 @@
+
+  .site-logo-img .custom-logo-link img  { 
+    max-width: 254px;
+} 
+a:hover{
+  cursor: pointer;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: white;
+  z-index: 10;
+}
