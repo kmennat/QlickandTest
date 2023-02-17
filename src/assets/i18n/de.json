@@ -7,10 +7,10 @@
     "btn_learn_more": "Mehr Erfahren",
     "my_services": "Meine Services",
     "my_services_para": "Unser Team ist auf die Programmiersprachen Java und Python spezialisiert, was es uns ermdglicht, uns auf die Industrie fur mobile Apps, PC-Spiele, Linux-basierte Anwendungen und mehr zu konzentrieren.",
-    "about_me": "Uber mich",
+    "about_me": "Über mich",
     "services": "Dienstleistungen",
     "contact": "Kontakt",
-    "home": "Heim",
+    "home": "Home",
     "manual_testing_card_heading": "Manueles Testen",
     "manual_testing_card_details": "Unsere manuellen Tests basieren auf der ISTQB-Zertifizierung, wobei wir die Scrum-Methodik, auch bekannt als Agile Softwareentwicklung mit Scrum, einbeziehen.Unsere Agile-Tester haben jahrelange Erfahrung in diesem Bereich und können schnell und einfach Bugs, etc. unter JIRA oder HP-ALM melden. Unser Team ist auf die Programmiersprachen Java und Python spezialisiert, so dass wir vor allem mobile Apps testen können und mehr..",
     "automata_testing_heading": "Automatestren Testerin",
@@ -39,5 +39,6 @@
     "upload_file_label": "Datei als Lebenslauf im PDF- oder Word-Format hochladen",
     "btn_apply": "anwenden",
     "btn_submit": "einreichen",
-    "btn_close": "schließen"
+    "btn_close": "schließen",
+    "Kundenzufriedenheit":"Kundenzufriedenheit"
 }
