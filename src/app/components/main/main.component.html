@@ -27,40 +27,80 @@
               </button> -->
             </div>
             <div class="modal-body">
-              <form [formGroup]="applyform" (ngSubmit)="onSubmit()">
+              <form [formGroup]="form" (ngSubmit)="submit()">
+
                 <div class="row">
                   <div class="col">
-                    <input type="text" id="name" class="form-control"  placeholder="{{'email_placeholder' | translate}}" [formControl]="name">
+                    <input formControlName="name" id="name" type="text" placeholder="{{'email_placeholder' | translate}}"
+                      class="form-control col">
+                    <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['name'].errors && f['name'].errors['required']"><small>Name is required.</small></div>
+                      <div *ngIf="f['name'].errors && f['name'].errors['minlength']"><small>Name should be 3 character.</small></div>
+                    </div>
                   </div>
                   <div class="col">
-                    <input type="text" id="vorname" class="form-control" placeholder="Vorname" [formControl]="vorname">
+                    <input formControlName="vorname" id="vorname" type="text" placeholder="Enter Vorname"
+                      class="form-control col">
+                    <div *ngIf="f['vorname'].touched && f['vorname'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['vorname'].errors && f['vorname'].errors['required']"> <small>Vorname is required.</small></div>
+                      <div *ngIf="f['vorname'].errors && f['vorname'].errors['minlength']"><small>Name should be 3 character.</small></div>
+                    </div>
                   </div>
 
                 </div>
                 <div class="row mt-3">
                   <div class="col">
-                    <input type="email" id="email" class="form-control" placeholder="{{'email_placeholder' | translate}}" [formControl]="email">
+                    <input formControlName="email" id="email" type="email" placeholder="{{'email_placeholder' | translate}}" class="form-control">
+                    <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['email'].errors && f['email'].errors['required']"> <small> Email is required.</small></div>
+                      <div *ngIf="f['email'].errors && f['email'].errors['email']"><small>Please, enter valid email address.</small>
+                      </div>
+                    </div>
                   </div>
                   <div class="col">
-                    <input type="text" id="phoneNo" class="form-control" placeholder="{{'telephone_placeholder' | translate}}" [formControl]="phoneNo">
+                    <input formControlName="telephone" id="telephone" type="text" placeholder="{{'telephone_placeholder' | translate}}" class="form-control">
+                    <div *ngIf="f['telephone'].touched && f['telephone'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['telephone'].errors && f['telephone'].errors['required']"> <small> phone no. is required.</small></div>
+                      <div *ngIf="f['telephone'].errors && f['telephone'].errors['minlength']"> <small>Name should be 3 character.</small></div>
+                    </div>
                   </div>
-
                 </div>
+
                 <div class="row mt-3">
                   <div class="form-group">
-                    <input type="text" id="address" class="form-control" id="inputAddress" placeholder="{{'address_placeholder' | translate}}" [formControl]="address">
+                    <input formControlName="address" id="address" type="text" placeholder="Enter Address" class="form-control">
+                    <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['address'].errors && f['address'].errors['required']"> <small>Address is required.</small></div>
+                    </div>
                   </div>
                 </div>
-                <div class="row mt-3">
-                  <small class="form-label" for="customFile">{{'upload_file_label' | translate}}</small>
-                  <input type="file" id="customfile" class="form-control" id="customFile"  [formControl]="customfile">
-                </div>
+         
 
+                  <div class="form-group mt-3">
+                    <small class="form-label" for="customFile">{{'upload_file_label' | translate}}</small>
+                  <input formControlName="filename" id="filename" type="file"  class="form-control col">
+                  <div *ngIf="f['filename'].touched && f['filename'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['filename'].errors && f['filename'].errors['required']"> <small>File is required.</small></div>
+                  </div> <input formControlName="address" id="address" type="text" placeholder="Enter Address" class="form-control">
+                    <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['address'].errors && f['address'].errors['required']"> <small>Address is required.</small></div>
+                    </div>
+                    <input formControlName="address" id="address" type="text" placeholder="{{'address_placeholder' | translate}}" class="form-control">
+                    <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
+                      <div *ngIf="f['address'].errors && f['address'].errors['required']"> <small>Address is required.</small></div>
+                    </div>
+                  </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success main-button" data-dismiss="modal">Close</button>
+                  <button type="submit" [disabled]="form.invalid" class="btn btn-success main-button">Submit</button>
+                  </div>
               </form>
             </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-success main-button" data-dismiss="modal">{{'btn_close' | translate}}</button>
-              <button type="submit" class="btn btn-success main-button" (click)="onSubmit()">{{'btn_submit' | translate}}</button>
+              <button type="submit" class="btn btn-success main-button" >{{'btn_submit' | translate}}</button>
             </div>
           </div>
         </div>
@@ -323,22 +363,37 @@
 
     <div class="row justify-content-center ">
       <div class="col-md-6 mb-5">
-        <form>
+        <form [formGroup]="contactform" (ngSubmit)="contactSubmit()">
+
           <div class="row mb-3">
+
             <div class="form-group col-md-6">
-              <input type="text" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp"
+              <input formControlName="contactname" id="contactname" type="text" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="{{'name_placeholder' | translate}}">
+                <div *ngIf="ff['contactname'].touched && ff['contactname'].invalid" class="alert alert-danger">
+                  <div *ngIf="ff['contactname'].errors && ff['contactname'].errors['required']"> <small> Name is required.</small></div>
+                  <div *ngIf="ff['contactname'].errors && ff['contactname'].errors['minlength']"> <small>Name should be 3 character.</small></div>
+                </div>
             </div>
+
             <div class="form-group col-md-6">
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              <input  formControlName="contactemail" id="contactemail" type="text" class="form-control"  aria-describedby="emailHelp"
                 placeholder="{{'email_placeholder' | translate}}">
+                <div *ngIf="ff['contactemail'].touched && ff['contactemail'].invalid" class="alert alert-danger">
+                  <div *ngIf="ff['contactemail'].errors && ff['contactemail'].errors['required']"> <small> Email is required.</small></div>
+                  <div *ngIf="ff['contactemail'].errors && ff['contactemail'].errors['contactemail']"><small>Please, enter valid email address.</small>
+                  </div>
+                </div>
             </div>
+
           </div>
           <div class="form-group">
-            <textarea placeholder="{{'content_placeholder' | translate}}" class="form-control" id="textAreaExample1" rows="4"></textarea>
+            <textarea placeholder="{{'content_placeholder' | translate}}"   formControlName="textAreaDetail" id="textAreaDetail" class="form-control" id="textAreaExample1" rows="4"></textarea>
+            <div *ngIf="ff['textAreaDetail'].touched && ff['textAreaDetail'].invalid" class="alert alert-danger">
+              <div *ngIf="ff['textAreaDetail'].errors && ff['textAreaDetail'].errors['required']"> <small> Detail required.</small></div>
+             
+            </div>
           </div>
-
-
 
           <button type="submit" class="btn btn-success mt-4 main-button">{{"send_btn" | translate}}</button>
         </form>

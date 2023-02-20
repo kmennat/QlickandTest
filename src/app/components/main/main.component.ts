@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-main',
@@ -7,27 +7,41 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public applyform :any
-  name = new FormControl('');
-  vorname = new FormControl('');
-  email = new FormControl('');
-  phoneNo = new FormControl('');
-  address = new FormControl('');
-  customfile = new FormControl('');
+  form = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    vorname: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    filename: new FormControl('', [Validators.required]),
+    telephone: new FormControl('', [Validators.required]),
+    address: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+  });
+  
+
+  contactform = new FormGroup({
+    contactname: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    textAreaDetail: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    contactemail: new FormControl('', [Validators.required, Validators.email]),
+  });
+  
 
 
-  constructor() { }
-  public onSubmit() {
-    console.log("dd",this.applyform.value);
+  get f(){
+    return this.form.controls;
+  }
+
+  get ff(){
+    return this.contactform.controls;
+  }
+  
+  submit(){
+    console.log(this.form.value);
+  }
+
+  contactSubmit(){
+    console.log(this.contactform.value)
   }
 
   ngOnInit(): void {
-  }
-  // scrollToServices(services: string): void {    
-  //   console.log(`scrolling to ${services}`);
-  //   let el = document.getElementById(services);
-  //   el?.scrollIntoView({behavior: 'smooth'});
+  
 
-  // }
-
-}
+}}
