@@ -11,8 +11,8 @@
         <br> <br>
         {{"top_para3" | translate}}
       </p>
-      <button id="services" class="btn btn-success main-button">{{'btn_learn_more' | translate }}</button>
-      <button id="services" class="btn btn-success main-button float-end" data-toggle="modal"
+      <button id="about_me"class="btn btn-success main-button">{{'btn_learn_more' | translate }}</button>
+      <button id="about_me" class="btn btn-success main-button float-end" data-toggle="modal"
         data-target="#exampleModalCenter">{{'btn_apply' | translate}}</button>
 
       <!-- Modal -->
@@ -81,11 +81,11 @@
                   <input formControlName="filename" id="filename" type="file"  class="form-control col">
                   <div *ngIf="f['filename'].touched && f['filename'].invalid" class="alert alert-danger">
                     <div *ngIf="f['filename'].errors && f['filename'].errors['required']"> <small>File is required.</small></div>
-                  </div> <input formControlName="address" id="address" type="text" placeholder="Enter Address" class="form-control">
+                  </div> <input formControlName="address" id="address" type="text" placeholder="Enter Address" class="form-control mt-3">
                     <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
                       <div *ngIf="f['address'].errors && f['address'].errors['required']"> <small>Address is required.</small></div>
-                    </div>
-                    <input formControlName="address" id="address" type="text" placeholder="{{'address_placeholder' | translate}}" class="form-control">
+                    </div> 
+                    <input formControlName="address" id="address" type="text" placeholder="{{'address_placeholder' | translate}}" class="form-control mt-3">
                     <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
                       <div *ngIf="f['address'].errors && f['address'].errors['required']"> <small>Address is required.</small></div>
                     </div>
@@ -98,10 +98,10 @@
               </form>
             </div>
 
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
               <button type="button" class="btn btn-success main-button" data-dismiss="modal">{{'btn_close' | translate}}</button>
               <button type="submit" class="btn btn-success main-button" >{{'btn_submit' | translate}}</button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -120,6 +120,76 @@
   <div class="row mt-5">
     <img src="../../../assets/Laptop2.png" class="laptopmobile" alt="">
   </div>
+
+
+
+
+  <div class="container mt-5 basic-font">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100 border-0">
+          <h2 class="basic-heading">
+            <b>
+              {{'about_me' | translate}}
+            </b>
+          </h2>
+  
+          <h4 class="text-success">
+            {{"process_and_philosophy" | translate}}
+          </h4>
+  
+          <h5 class="mb-0 mt-5 h6">
+            <span class=""><img src="../../../assets/tick.png" class="h-75" alt=""></span>
+            {{"reliability" | translate}}
+          </h5>
+  
+          <h5 class="mb-0 h6">
+            <span class=""><img src="../../../assets/tick.png" class="h-75" alt=""></span>
+            {{"professionalism" | translate}}
+          </h5>
+  
+          <h5 class="mb-0 h6">
+            <span class=""><img src="../../../assets/tick.png" class="h-75" alt=""></span>
+            Innovation
+          </h5>
+  
+          <h5 class="mb-0 h6">
+            <span class=""><img src="../../../assets/tick.png" class="h-75" alt=""></span>
+            {{"punkelichkit" | translate}}
+          </h5>
+  
+        </div>
+      </div>
+  
+      <div class="col services-para">
+        <div class="card h-100 border-0">
+          <small>
+            {{"about_me_para1" | translate}}
+          </small><br>
+          <small>
+            {{"about_me_para2" | translate}}
+          </small>
+          <br>
+          <small>
+            {{"about_me_para3" | translate}}</small>
+          <br>
+          <small id="services">
+            {{"about_me_para4" | translate}}
+          </small>
+          <br>
+        </div>
+      </div>
+  
+      <div class="col">
+        <div class="card h-100 border-0">
+          <img src="../../../assets/Icons-12.png" class="mx-5" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
   <div class="row justify-content-center text-center mt-5">
     <div class="col-md-8 mt-3">
@@ -217,78 +287,15 @@
         {{"contact_para2" | translate}}
       </p>
 
-      <button id="about_me" class="btn btn-success main-button">{{'contact' | translate}}</button>
+      <button class="btn btn-success main-button" >{{'contact' | translate}}</button>
     </div>
   </div>
 
 </div>
+<div id="contact"></div>
 
 
-<div class="container mt-5 basic-font">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
-      <div class="card h-100 border-0">
-        <h2 class="basic-heading">
-          <b>
-            {{'about_me' | translate}}
-          </b>
-        </h2>
-
-        <h4 class="text-success">
-          {{"process_and_philosophy" | translate}}
-        </h4>
-
-        <h5 class="mb-0 mt-5 h6">
-          <span class=""><img src="../../../assets/tick.png" class="h-75" alt=""></span>
-          {{"reliability" | translate}}
-        </h5>
-
-        <h5 class="mb-0 h6">
-          <span class=""><img src="../../../assets/tick.png" class="h-75" alt=""></span>
-          {{"professionalism" | translate}}
-        </h5>
-
-        <h5 class="mb-0 h6">
-          <span class=""><img src="../../../assets/tick.png" class="h-75" alt=""></span>
-          Innovation
-        </h5>
-
-        <h5 class="mb-0 h6">
-          <span class=""><img src="../../../assets/tick.png" class="h-75" alt=""></span>
-          {{"punkelichkit" | translate}}
-        </h5>
-
-      </div>
-    </div>
-
-    <div class="col services-para">
-      <div class="card h-100 border-0">
-        <small>
-          {{"about_me_para1" | translate}}
-        </small><br>
-        <small>
-          {{"about_me_para2" | translate}}
-        </small>
-        <br>
-        <small>
-          {{"about_me_para3" | translate}}</small>
-        <br>
-        <small>
-          {{"about_me_para4" | translate}}
-        </small>
-        <br>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="card h-100 border-0">
-        <img src="../../../assets/Icons-12.png" class="mx-5" alt="">
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container basic-font">
+<!-- <div class="container basic-font">
   <div class="row justify-content-center p-3">
     <div class="col-md-8 text-center mt-5 p-5 rounded-3"
       style="border-radius: 42px !important; border: 2px solid #80808061;">
@@ -350,10 +357,10 @@
       <br>
     </div>
   </div>
-</div>
+</div> -->
 
 
-<div class="container-fluid backgrnd-image mb-5 basic-font" id="contact">
+<div class="container-fluid backgrnd-image mb-5 basic-font"  >
   <div class="row backgrnd-image justify-content-center">
     <div class="col-md-6 text-center">
       <h1 class="mt-4"><b><strong class="text-white">{{'contact' | translate}}</strong></b></h1>
@@ -405,81 +412,4 @@
 
 
 </div>
-<!-- footer -->
-<div class="container text-secondary basic-font">
-  <div class="row zigzag">
-    <div class="col-md-12">
-      <img src="../../../assets/1.png" class="w-18 footer-logo" height="45px" alt="">
-    </div>
-    <div class="row text-center">
-      <div class="col-md-4 mt-5">
-        <div class="mt-4">
-          <small>
-            <b>
-              <strong>
-                Qlick and Test
-              </strong>
-            </b>
-          </small><br>
-          <small>
-            Werstener Dorfstraße 17 <br> 40591 Düsseldorf
-          </small>
-        </div>
 
-      </div>
-
-      <div class="col-md-4">
-        <div class="row mt-5">
-
-          <!-- <small><b><strong class="m-4">{{'contact' | translate}} :</strong></b></small>-->
-          <!-- <div class="row justify-content-center"> -->
-          <!-- <div class="col-md-1 text-end"><span><img src="../../../assets/Icons-05.png" alt="" class="mt-3"></span></div> -->
-          <div class=" justify-content-around">
-            <span>
-              <img src="../../../assets/Icons-05.png" alt="" class="mt-3">
-            </span>
-            <small class="mt-2 px-1">
-
-              <small>
-                +49 123459978098
-              </small>
-
-               <!--<br>
-
-              <small style="margin-left: 24px;">
-               +49 1234985 678
-              </small> -->
-
-            </small>
-          </div>
-          <!-- </div> -->
-
-
-        </div>
-
-        <div class="row mt-1">
-
-          <div class="justify-content-around col-md-11">
-            <span><img src="../../../assets/Icons-08.png" alt="" class="mt-2"></span>
-            <!--<small class="mt-2 px-1"><small>qlickandtest.de</small> <br>-->
-              <small style="margin-left: 76px;">hello@qlickandtest.de</small>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-md-4">
-        <div class="row justify-content-end">
-          <div class="col-md-4 mt-5">
-            <img src="../../../assets/Icons-06.png" class="w-25 mx-2" alt="">
-            <img src="../../../assets/Icons-07.png" class="w-25" alt="">
-            <ul class="p-2 text-start" style="list-style-type: none;">
-              <li routerLink="date">Datenschuzt</li>
-              <li routerLink="impressum">impressum</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

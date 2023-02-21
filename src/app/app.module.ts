@@ -11,6 +11,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { DatenschuztComponent } from './components/datenschuzt/datenschuzt.component';
 import { ImpressumComponent } from './components/impressum/impressum.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -26,6 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MainComponent,
     DatenschuztComponent,
     ImpressumComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
