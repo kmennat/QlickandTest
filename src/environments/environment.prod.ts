@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URL: "https://api.qlickandtest.com/api"
+  API_URL: "https://localhost:44366/api/"
 };

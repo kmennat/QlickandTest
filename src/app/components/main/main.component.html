@@ -27,11 +27,11 @@
               </button> -->
             </div>
             <div class="modal-body">
-              <form [formGroup]="form" (ngSubmit)="submit()">
+              <form [formGroup]="form" (ngSubmit)="applySubmit()">
 
                 <div class="row">
                   <div class="col">
-                    <input formControlName="name" id="name" type="text" placeholder="{{'email_placeholder' | translate}}"
+                    <input formControlName="name" id="name" type="text" placeholder="{{'name_placeholder' | translate}}"
                       class="form-control col">
                     <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
                       <div *ngIf="f['name'].errors && f['name'].errors['required']"><small>Name is required.</small></div>
@@ -384,7 +384,7 @@
             </div>
 
             <div class="form-group col-md-6">
-              <input  formControlName="contactemail" id="contactemail" type="text" class="form-control"  aria-describedby="emailHelp"
+              <input  formControlName="contactemail" id="contactemail" type="email" class="form-control"  aria-describedby="emailHelp"
                 placeholder="{{'email_placeholder' | translate}}">
                 <div *ngIf="ff['contactemail'].touched && ff['contactemail'].invalid" class="alert alert-danger">
                   <div *ngIf="ff['contactemail'].errors && ff['contactemail'].errors['required']"> <small> Email is required.</small></div>

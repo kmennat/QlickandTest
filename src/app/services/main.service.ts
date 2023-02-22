@@ -15,7 +15,7 @@ export class MainService {
   }
 
   contactAdmin(data:any){
-    return this.http.post(environment.API_URL, data)
+    return this.http.post(environment.API_URL+'authentication/contact', data)
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MainService } from 'src/app/services/main.service';
 
 @Component({
   selector: 'app-main',
@@ -7,6 +8,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+
+  
+
+  ngOnInit(): void { 
+
+  }
+
+  constructor(private mainService: MainService){}
+
+
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     vorname: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -33,15 +44,43 @@ export class MainComponent implements OnInit {
     return this.contactform.controls;
   }
   
-  submit(){
+  applySubmit(){
     console.log(this.form.value);
+
+    let request = {
+      "message": `Name: ${this.form.value.name}
+                Email: ${this.form.value.email},
+                Telephone: ${this.form.value.telephone}
+                Address: ${this.form.value.address}`,
+      "title": "Qlick And Test Job Application",
+      "emailAddress": this.form.value.email,
+      "CVPath": "asdf"
+    }
+
+    this.mainService.contactAdmin(request).subscribe(resp => {
+      alert("Success")
+    }, err => {
+      alert("failed")
+    })
   }
 
   contactSubmit(){
     console.log(this.contactform.value)
+
+    let request = {
+      "message": `Email: ${this.contactform.value.contactemail}
+                    Name: ${this.contactform.value.contactname},
+                    Message: ${this.contactform.value.textAreaDetail}`,
+      "title": "Qlick And Test Contact",
+      "emailAddress": this.contactform.value.contactemail
+    }
+
+    this.mainService.contactAdmin(request).subscribe(resp => {
+      alert("Success")
+    }, err => {
+      alert("failed")
+    })
+
   }
 
-  ngOnInit(): void {
-  
-
-}}
+}

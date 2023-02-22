@@ -7,11 +7,15 @@
     background-size: 1396px;
   }  
 
+  .bottom-text{
+    padding-left: 140px;
+  }
   @media only screen and (max-width: 600px) and (min-width: 320px) {
     .footer-logo {
       width: 200px !important;
       margin-left: 59px;
     }
+
   
     .zigzag {
       background-image: none;
