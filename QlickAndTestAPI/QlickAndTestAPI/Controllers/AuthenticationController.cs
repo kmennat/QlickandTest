@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using QlickAndTestApi.BusinessObjects;
 using QlickAndTestApi.Interfaces;
+using System.Net.Mail;
 
 namespace QlickAndTestApi.Controllers
 {
@@ -29,6 +30,14 @@ namespace QlickAndTestApi.Controllers
             public string CVFilePath { get; set; }
         }
 
+        public class ContactUsRequest
+        {
+            public string Message { get; set; }
+            public string Title { get; set; }
+            public string EmailAddress { get; set; }
+            public string ?CVFilePath { get; set; }
+        }
+
 
         [HttpPost]
         [Route("token")]
@@ -46,9 +55,30 @@ namespace QlickAndTestApi.Controllers
 
         [HttpPost]
         [Route("contact")]
-        public async Task<IActionResult> SendMail(string email, string subject, string message)
+        public async Task<IActionResult> SendMail(ContactUsRequest request)
         {
-            await _mailkitsenderService.SendEmailAsync(email, subject, message);
+            SmtpClient smtpClient = new SmtpClient("w01dabd7.kasserver.com", 465);
+
+            smtpClient.Credentials = new System.Net.NetworkCredential("hello@qlickandtest.de", "hello#3112");
+            // smtpClient.UseDefaultCredentials = true; // uncomment if you don't want to use the network credentials
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            MailMessage mail = new MailMessage();
+            mail.Subject = request.Title;
+            mail.Body = request.Message;
+            if (request.CVFilePath != null)
+                mail.Attachments.Add(new Attachment(request.CVFilePath));
+
+            //Setting From , To and CC
+            mail.From = new MailAddress(request.EmailAddress, "Qlick And Test");
+            mail.To.Add(new MailAddress("hello@qlickandtest.de"));
+
+            smtpClient.Send(mail);
+
+
+
+
+            //await _mailkitsenderService.SendEmailAsync(request.EmailAddress, request.Title, request.Message);
             return NoContent();
         }
 

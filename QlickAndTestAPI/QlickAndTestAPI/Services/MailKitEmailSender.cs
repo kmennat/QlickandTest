@@ -51,8 +51,8 @@ namespace ISWebApplication.Services
             email.Sender = MailboxAddress.Parse(Options.Sender_EMail);
             if (!string.IsNullOrEmpty(Options.Sender_Name))
                 email.Sender.Name = Options.Sender_Name;
-            email.From.Add(email.Sender);
-            email.To.Add(MailboxAddress.Parse(to));
+            email.From.Add(MailboxAddress.Parse(to));
+            email.To.Add(email.Sender);
             email.Subject = subject;
             email.Body = new TextPart(TextFormat.Html) { Text = message };
 
