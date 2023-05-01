@@ -52,7 +52,7 @@ export class MainComponent implements OnInit {
                 Email: ${this.form.value.email},
                 Telephone: ${this.form.value.telephone}
                 Address: ${this.form.value.address}`,
-      "title": "Qlick And Test Job Application",
+      "title": "Qlick and Test Job Application",
       "emailAddress": this.form.value.email,
       "CVPath": "asdf"
     }
@@ -71,7 +71,7 @@ export class MainComponent implements OnInit {
       "message": `Email: ${this.contactform.value.contactemail}
                     Name: ${this.contactform.value.contactname},
                     Message: ${this.contactform.value.textAreaDetail}`,
-      "title": "Qlick And Test Contact",
+      "title": "Qlick and Test Contact",
       "emailAddress": this.contactform.value.contactemail
     }
 

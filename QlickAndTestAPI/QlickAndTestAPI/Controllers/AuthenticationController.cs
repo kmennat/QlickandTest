@@ -70,7 +70,7 @@ namespace QlickAndTestApi.Controllers
                 mail.Attachments.Add(new Attachment(request.CVFilePath));
 
             //Setting From , To and CC
-            mail.From = new MailAddress(request.EmailAddress, "Qlick And Test");
+            mail.From = new MailAddress(request.EmailAddress, "Qlick and Test");
             mail.To.Add(new MailAddress("hello@qlickandtest.de"));
 
             smtpClient.Send(mail);
