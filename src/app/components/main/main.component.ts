@@ -54,8 +54,10 @@ export class MainComponent implements OnInit {
                 Address: ${this.form.value.address}`,
       "title": "Qlick and Test Job Application",
       "emailAddress": this.form.value.email,
-      "CVPath": "asdf"
+      "CVPath": this.form.value.filename
     }
+
+    console.log(request);
 
     this.mainService.contactAdmin(request).subscribe(resp => {
       alert("Success")
