@@ -11,7 +11,7 @@
         <br> <br>
         {{"top_para3" | translate}}
       </p>
-      <button id="about_me"class="btn btn-success main-button">{{'btn_learn_more' | translate }}</button>
+      <!--<button id="about_me"class="btn btn-success main-button">{{'btn_learn_more' | translate }}</button>-->
       <button id="about_me" class="btn btn-success main-button float-end" data-toggle="modal"
         data-target="#exampleModalCenter">{{'btn_apply' | translate}}</button>
 
@@ -68,7 +68,7 @@
 
                 <div class="row mt-3">
                   <div class="form-group">
-                    <input formControlName="address" id="address" type="text" placeholder="Enter Address" class="form-control">
+                    <input formControlName="address" id="address" type="text" placeholder="{{'address_placeholder' | translate}}" class="form-control">
                     <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
                       <div *ngIf="f['address'].errors && f['address'].errors['required']"> <small>Address is required.</small></div>
                     </div>
@@ -78,10 +78,13 @@
 
                   <div class="form-group mt-3">
                     <small class="form-label" for="customFile">{{'upload_file_label' | translate}}</small>
-                  <input formControlName="filename" id="filename" type="file"  class="form-control col">
-                  <div *ngIf="f['filename'].touched && f['filename'].invalid" class="alert alert-danger">
+                    <input formControlName="filename" id="filename" type="file"  class="form-control col">
+                    <div *ngIf="f['filename'].touched && f['filename'].invalid" class="alert alert-danger">
                     <div *ngIf="f['filename'].errors && f['filename'].errors['required']"> <small>File is required.</small></div>
-                  </div> <input formControlName="address" id="address" type="text" placeholder="Enter Address" class="form-control mt-3">
+                   </div>
+                  </div>
+
+                  <!--</div> <input formControlName="address" id="address" type="text" placeholder="Enter Address" class="form-control mt-3">
                     <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
                       <div *ngIf="f['address'].errors && f['address'].errors['required']"> <small>Address is required.</small></div>
                     </div> 
@@ -89,12 +92,13 @@
                     <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
                       <div *ngIf="f['address'].errors && f['address'].errors['required']"> <small>Address is required.</small></div>
                     </div>
-                  </div>
+                  </div>-->
 
                 <div class="modal-footer">
                   <button type="button" class="btn btn-success main-button" data-dismiss="modal">Close</button>
                   <button type="submit" [disabled]="form.invalid" class="btn btn-success main-button">Submit</button>
                   </div>
+                  
               </form>
             </div>
 
@@ -211,7 +215,7 @@
           <div class="card-body text-center">
             <h5 class="card-title basic-heading">
               {{"manual_testing_card_heading" | translate}}</h5>
-            <a href="" class="text-success text-decoration-none mb-4">Mobile App Website ANd mehri</a>
+            <a href="" class="text-success text-decoration-none mb-4">{{"manual_testing_heading" | translate}}</a>
             <p class="card-text p-4">
               {{"manual_testing_card_details" | translate}}
             </p>
@@ -226,19 +230,20 @@
 
           <div class="card-body text-center">
             <h5 class="card-title basic-heading">{{"automata_testing_heading" | translate}}</h5>
-            <a href="" class="text-success text-decoration-none mb-4">Mobile App Website ANd mehri</a>
-            <p class="card-text mt-4 p-4">F
+            <a href="" class="text-success text-decoration-none mb-4">{{"manual_testing_heading" | translate}}</a>
+            <p class="card-text mt-4 p-4">
               {{"automata_testing_detail1" | translate}}
-              .</p>
-            <p class="card-textp-4" style="    text-align: justify;
+              </p>
+            <p class="card-textp-4" style=" text-align: justify;
             margin-left: 34px;">
               • Jenkins<br>
               • Selenium <br>
+              • Playwright <br>
               • Appium <br>
               • Protractor <br>
               • XENON Tool <br>
               • Robot Framework <br>
-              • PYTHON<br>
+              • Python<br>
               • REST-assured
             </p> <br>
             <p class="card-text p-4">
@@ -255,7 +260,7 @@
 
           <div class="card-body text-center mt-1">
             <h5 class="card-title basic-heading">{{"performance_api_testing_heading"| translate}}</h5>
-            <a href="" class="text-success text-decoration-none mb-4">Mobile App Website ANd mehri</a>
+            <a href="" class="text-success text-decoration-none mb-4">{{"LastPerformance_testing_heading"| translate}}</a>
             <p class="card-text mt-4 p-4">
               {{"performance_api_testing_detail1"| translate}}
             </p>
